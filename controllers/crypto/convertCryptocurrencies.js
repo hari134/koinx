@@ -4,7 +4,7 @@ const cryptocurrencyExists = require("../../helpers/cryptocurrencyExists")
 async function convertCryptocurrencies(req, res) {
   try {
     const { fromCurrency, toCurrency, date } = req.body;
-    if (!cryptocurrencyExists(fromCurrency) || cryptocurrencyExists(toCurrency)) {
+    if (!cryptocurrencyExists(fromCurrency) || !cryptocurrencyExists(toCurrency)) {
       res.status(500).json({ error: 'Invalid Cryptocurrency' });
     }
 
