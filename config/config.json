@@ -4,6 +4,6 @@
   },
   "BASE_COINGECKO_URL": "https://api.coingecko.com/api/v3",
   "cron-jobs": {
-    "updateCryptoList": "*/1 * * * *"
+    "updateCryptoList": "0 * * * *"
   }
 }

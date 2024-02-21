@@ -1,19 +1,23 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const connectToMongoDB = require('./middleware/MongoConnect'); // Import the middleware
+const swaggerUI = require('swagger-ui-express');
+const connectToMongoDB = require('./helpers/MongoConnect'); // Import the middleware
 // const publicRoutes = require('./routes/PublicRoutes')
 const cryptoRoutes = require('./routes/crypto');
 const cron = require('node-cron');
 const config = require('./config/config.json');
-const updateCoinsList = require("./cron-jobs/crypto/updateCryptoList"); 
+const updateCoinsList = require("./cron-jobs/crypto/updateCryptoList");
+const docs = require('./docs');
 
- async function scheduleCronJobs() {
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(docs));
+
+async function scheduleCronJobs() {
   try {
     const updateCryptoListFrequency = config["cron-jobs"]["updateCryptoList"];
 
     // Schedule the cron job to run updateCoinsList based on the frequency from config
-    cron.schedule(updateCryptoListFrequency , async () => {
+    cron.schedule(updateCryptoListFrequency, async () => {
       try {
         console.log('Updating coin list...');
         await updateCoinsList();
