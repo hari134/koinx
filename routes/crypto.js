@@ -4,6 +4,6 @@ const router = express.Router();
 const { convertCryptocurrencies ,getCompanies} = require("../controllers/crypto/index");
 router.use(express.json());
 router.post('/convert', convertCryptocurrencies);
-router.get('/getCompanies/', getCompanies);
+router.post('/getCompanies/', getCompanies);
 
 module.exports = router;
