@@ -27,6 +27,10 @@ The server will start running at `http://localhost:3000`.
 
 **Note:** You need to replace the MongoDB URL in `config/config.json` with your MongoDB Atlas URL.
 
+## Cron job to update coin names and ids
+
+There is a cron job that runs every 1 hour that gets the names and ids of all cryptocurrencies and stores it in the MongoDB database.
+
 ## API Endpoints
 
 ### 1. Convert Cryptocurrencies
