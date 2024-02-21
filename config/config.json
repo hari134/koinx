@@ -1,0 +1,9 @@
+{
+  "db": {
+    "MONGODB_URI": "mongodb url here"
+  },
+  "BASE_COINGECKO_URL": "https://api.coingecko.com/api/v3",
+  "cron-jobs": {
+    "updateCoinsList": "0 * * * *"
+  }
+}
