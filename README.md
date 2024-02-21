@@ -82,6 +82,8 @@ The server will start running at `http://localhost:3000`.
 
 The API endpoints are documented using Swagger. You can access the Swagger UI at `/api-docs` when the server is running.
 
+Hosted API documentation - http://54.146.146.197:3000/api-docs
+
 ## Hosting Information
 
 The application is hosted on Amazon EC2 and hosted MongoDB Atlas database is used.
